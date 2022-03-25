@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Creado mediante ```npx create-react-app react-giphy-app```
 
 ## Available Scripts
 
