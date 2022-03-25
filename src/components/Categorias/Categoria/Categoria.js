@@ -1,24 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Loading from '../../Loading/Loading'
 import ImagenesCategoria from '../ImagenesCategoria/ImagenesCategoria'
-import { getGifs } from '../../../services/gifs.service'
+import { useGifs } from '../../../services/hooks/useGifs'
 
 const Categoria = ({categoria}) => {
 
-  const [imagenes, setImages] = useState([]);
-
-  //Para que no esté llamando continuamente (que es lo que pasa si pones solo la llamada a getImages()), con [] como segundo parametro hace que solo se ejecute una vez al renderizar el componente.
-  useEffect(() => {
-    getGifs( categoria ).then( setImages )
-  },[]);  
-  
+  const imagenes = useGifs(categoria); 
 
   return (
     <>
         <h3 key={categoria} className="animate__animated animate__fadeIn"> { categoria } </h3>
-        <Loading loading={(!imagenes)} />
-        <ImagenesCategoria imagenes={ imagenes } />
+        <Loading loading={(imagenes.loading)} />
+        <ImagenesCategoria imagenes={ imagenes.data } />
     </>
   )
 }
