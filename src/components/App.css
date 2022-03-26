@@ -1,3 +1,8 @@
+h3 {
+  text-transform: uppercase;
+  margin-top:35px;
+}
+
 .card-grid {
   display: flex;
   align-items: flex-start;
@@ -30,4 +35,8 @@
 }
 .contenedor-form input{
   margin-left: 2px;
+}
+
+.contenedor-form input[type="checkbox"] {
+    margin-top: 10px;
 }
