@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-const AddCategoria = ({ add }) => {
+const AddCategoria = ({ add, texto='' }) => {
 
   const [categoria, setCategoria] = useState('');
 
@@ -19,7 +19,7 @@ const AddCategoria = ({ add }) => {
 
   return (
     <form onSubmit={handleSubmitForm}>
-      <input type="text" onChange={handleChangeInput} placeholder="Añade una Categoría" value={categoria} />
+      <input type="text" onChange={handleChangeInput} placeholder={texto} value={categoria} />
     </form>
   )
   

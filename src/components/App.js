@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import AddCategoria from './Categorias/AddCategoria/AddCategoria';
 import Categorias from './Categorias/Categorias';
+import Checkbox from './Checkbox/Checkbox';
 
 function App() {
 
@@ -20,9 +21,12 @@ function App() {
 
   return (
     <div className="App">
-      <AddCategoria add={addCategoria} />
-      <input type="checkbox" onChange={debeRemplazar} checked={reemplazarMostrados} />Reemplazar los mostrados
+      <div className='contenedor-form'>
+        <AddCategoria add={addCategoria} texto='Categoría a Buscar' />      
+        <Checkbox handleChange={debeRemplazar} checkedBox={reemplazarMostrados} texto="Reemplazar los mostrados" />
+      </div>
       <Categorias categorias={categorias} />
+      
     </div>
   );
 

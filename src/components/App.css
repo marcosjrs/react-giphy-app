@@ -24,3 +24,10 @@
   text-transform: uppercase;
   font-weight: bold;
 }
+
+.contenedor-form{
+  margin: 20px 0 0 40px;
+}
+.contenedor-form input{
+  margin-left: 2px;
+}
